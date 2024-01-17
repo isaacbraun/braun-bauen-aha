@@ -2,7 +2,7 @@
 export const partial = true;
 export const prerender = true;
 
-const file = Bun.file('/tmp/count.txt');
+const file = Bun.file('public/count.txt');
 
 const count: Number = parseInt(await file.text()) + 1;
 

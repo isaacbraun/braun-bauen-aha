@@ -3,7 +3,7 @@ export const prerender = true
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 
-const countFile = Bun.file('count.txt');
+const countFile = Bun.file('public/count.txt');
 
 const count: Number = parseInt(await countFile.text())
 ---
