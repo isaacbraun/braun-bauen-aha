@@ -1,0 +1,11 @@
+---
+export const partial = true;
+
+const file = Bun.file('/tmp/count.txt');
+
+const count: Number = parseInt(await file.text()) - 1;
+
+await Bun.write(file, count.toString());
+---
+
+{count}
