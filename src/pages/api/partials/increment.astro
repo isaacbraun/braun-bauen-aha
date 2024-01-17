@@ -1,5 +1,6 @@
 ---
 export const partial = true;
+export const prerender = true;
 
 const file = Bun.file('/tmp/count.txt');
 
@@ -8,4 +9,6 @@ const count: Number = parseInt(await file.text()) + 1;
 await Bun.write(file, count.toString());
 ---
 
-{count}
+<span id="count" hx-swap-oob="true">
+    {count}
+</span>

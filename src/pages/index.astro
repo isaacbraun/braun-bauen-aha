@@ -1,4 +1,5 @@
 ---
+export const prerender = true
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 
@@ -43,8 +44,8 @@ const count: Number = parseInt(await countFile.text())
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
 		<h2>Count: <span id="count">{count}</span></h2>
-		<button hx-post="/api/partials/increment" hx-target="#count">Increment</button>
-		<button hx-post="/api/partials/decrement" hx-target="#count">Decrement</button>
+		<button hx-post="/api/partials/increment" hx-swap="none">Increment</button>
+		<button hx-post="/api/partials/decrement" hx-swap="none">Decrement</button>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
